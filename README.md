@@ -19,7 +19,7 @@ Scan your Kubernetes cluster for idle CPU, memory, and GPU resources. Get a deta
 | Flag | Default | Description |
 |------|---------|-------------|
 | `--local` | | Print report only, do not publish |
-| `--publish=BOOL` | `true` | Enable/disable publishing |
+| `--publish=BOOL` | `false` | Enable/disable publishing |
 | `--endpoint URL` | `https://ecoscale.dev` | Publish endpoint |
 | `--context NAME` | current context | kubectl context to use |
 | `--namespace NS` | all namespaces | Restrict scan to a namespace |
@@ -32,32 +32,16 @@ Scan your Kubernetes cluster for idle CPU, memory, and GPU resources. Get a deta
 
 ### Security notes
 
-**Publishing is enabled by default.** Running `./scan.sh` without `--local` or `--publish=false` sends cluster metadata (node names, pod names, namespaces, workloads, resource usage) to an external endpoint.
-
-For production clusters, always use one of these safe patterns:
-
-```bash
-# Local only — nothing is sent anywhere
-./scan.sh --local
-
-# Or explicitly disable publishing
-./scan.sh --publish=false
-
-# Publish with names redacted to anonymous IDs
-./scan.sh --redact=true
-
-# Full safety: local + redacted + no cross-cluster confusion
-./scan.sh --context=prod-cluster --local --redact=true --quiet
-```
+**Publishing is opt-in (disabled by default).** You must pass `--publish=true` or omit `--local` to send data to an endpoint. For production clusters, review what metadata is sent and consider `--redact=true`.
 
 ### Examples
 
 ```bash
-# Run a local scan with table output (safe for production)
-./scan.sh --local
-
-# Run and publish to the default endpoint
+# Default (local only, no publish) — safe for production
 ./scan.sh
+
+# Explicitly publish to default endpoint
+./scan.sh --publish=true
 
 # Scan a specific namespace, output JSON
 ./scan.sh --namespace=kube-system --output=json
@@ -65,20 +49,11 @@ For production clusters, always use one of these safe patterns:
 # Use a specific kubectl context, show top 20 items
 ./scan.sh --context=prod-cluster --top=20
 
-# Production-safe: local scan of prod context with redacted names
-./scan.sh --context=prod-cluster --local --redact=true
-
-# Production-safe: publish with redacted names to custom endpoint
+# Publish with redacted names to custom endpoint
 ./scan.sh --context=prod-cluster --redact=true --publish=true --endpoint=https://your-internal-endpoint.example.com
-
-# Disable publishing with space-separated flag value
-./scan.sh --publish false
 
 # Publish to a custom endpoint
 ./scan.sh --endpoint https://ecoscale.dev/api
-
-# Shortcut for local-only scan
-./scan.sh --local
 ```
 
 ## What it scans

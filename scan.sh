@@ -4,7 +4,7 @@ set -u
 DEFAULT_ENDPOINT="https://ecoscale.dev"
 DEFAULT_TOP=10
 DEFAULT_REDACT=false
-DEFAULT_PUBLISH=true
+DEFAULT_PUBLISH=false
 SCAN_TTL_HOURS=24
 GPU_RESOURCE_KEY="nvidia.com/gpu"
 
