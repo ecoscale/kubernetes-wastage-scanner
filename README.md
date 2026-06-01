@@ -92,6 +92,8 @@ This tool uses **Metrics Server** to collect real-time usage data from your Kube
 
 ## Want deeper analysis?
 
+![Kubernetes Capacity Audit](Book%20a%20Kubernetes%20Capacity%20Audit.png)
+
 If you need **historical data**, **predictive recommendations**, and **longer trend analysis**, check out our standalone server setup. It works with popular tools like **Prometheus** to analyze resource utilization over the last **2 weeks** and provides intelligent predictions for your Kubernetes resources.
 
-[📅 Schedule a free demo](https://ecoscale.dev/contact)
+[📅 Book a Kubernetes Capacity Audit](https://ecoscale.dev/ecoscale-demo/)
