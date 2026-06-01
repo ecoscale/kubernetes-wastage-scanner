@@ -85,3 +85,13 @@ chmod +x scan.sh
 - **Table output** – terminal-friendly report with overall stats, top wasted namespaces/workloads, overallocated nodes/nodepools, missing resource requests, and GPU allocation
 - **JSON output** – structured JSON for programmatic consumption
 - **Published HTML** – shareable detailed report hosted for 24 hours
+
+## Limitations
+
+This tool uses **Metrics Server** to collect real-time usage data from your Kubernetes cluster. The Kubernetes Metrics Server has a default metric resolution window of **60 seconds**, though it scrapes data from Kubelets every **15 seconds**. Because this is a point-in-time snapshot with a short sampling window, the report may be incomplete or misleading in some cases — especially for bursty workloads or clusters with frequent pod churn.
+
+## Want deeper analysis?
+
+If you need **historical data**, **predictive recommendations**, and **longer trend analysis**, check out our standalone server setup. It works with popular tools like **Prometheus** to analyze resource utilization over the last **2 weeks** and provides intelligent predictions for your Kubernetes resources.
+
+[📅 Schedule a free demo](https://ecoscale.dev/contact)
