@@ -1,9 +1,21 @@
+<div align="center">
+
 # Kubernetes Wastage Scanner
 
-Scan your Kubernetes cluster for idle CPU, memory, and GPU resources. Get a detailed terminal/JSON report with saving recommendations, with an optional publish to [ecoscale.dev](https://ecoscale.dev) for a shareable HTML report (available for 24 hours).
+**Free · Open Source · Zero-install Kubernetes cost savings scanner**
 
-- **Website:** https://ecoscale.github.io/kubernetes-wastage-scanner/
-- **GitHub:** https://github.com/ecoscale/kubernetes-wastage-scanner
+[![GitHub Repo](https://img.shields.io/badge/GitHub-ecoscale%2Fkubernetes--wastage--scanner-blue?logo=github)](https://github.com/ecoscale/kubernetes-wastage-scanner)
+[![Stars](https://img.shields.io/github/stars/ecoscale/kubernetes-wastage-scanner?style=social)](https://github.com/ecoscale/kubernetes-wastage-scanner)
+
+**⭐ Star us on GitHub — it helps others find this tool!**
+
+[Website](https://ecoscale.github.io/kubernetes-wastage-scanner/) · [GitHub](https://github.com/ecoscale/kubernetes-wastage-scanner) · [ecoscale.dev](https://ecoscale.dev)
+
+---
+
+</div>
+
+Scan your Kubernetes cluster for idle CPU, memory, and GPU resources — no installation, no agents, no credentials stored. Get a detailed terminal/JSON report with saving recommendations, with an optional publish to [ecoscale.dev](https://ecoscale.dev) for a shareable HTML report (available for 24 hours).
 
 ## Quick start
 
@@ -60,7 +72,7 @@ chmod +x scan.sh
 
 # Use a specific kubectl context, show top 20 items
 ./scan.sh --context=prod-cluster --top=20
-
+```
 
 ## What it scans
 
