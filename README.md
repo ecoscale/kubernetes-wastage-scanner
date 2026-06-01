@@ -1,6 +1,18 @@
-# Kubernetes Waste Scanner
+# Kubernetes Wastage Scanner
 
 Scan your Kubernetes cluster for idle CPU, memory, and GPU resources. Get a detailed terminal/JSON report with saving recommendations, with an optional publish to [ecoscale.dev](https://ecoscale.dev) for a shareable HTML report (available for 24 hours).
+
+- **Website:** https://ecoscale.github.io/kubernetes-wastage-scanner/
+- **GitHub:** https://github.com/ecoscale/kubernetes-wastage-scanner
+
+## Quick start
+
+```bash
+# Download and run locally (no data leaves your machine)
+curl -sSLO https://raw.githubusercontent.com/ecoscale/kubernetes-wastage-scanner/main/scan.sh
+chmod +x scan.sh
+./scan.sh
+```
 
 ## Requirements
 
@@ -61,7 +73,6 @@ Scan your Kubernetes cluster for idle CPU, memory, and GPU resources. Get a deta
 - **Nodes** – capacity, allocatable resources, nodepool labels (Karpenter, EKS, GKE, AKS)
 - **Pods & containers** – resource requests and actual usage (via Metrics Server)
 - **ReplicaSets / Jobs** – resolves workloads up to Deployments, Rollouts, and CronJobs
-- **GPU resources** – allocation tracking for `nvidia.com/gpu`
 
 ## Output
 
