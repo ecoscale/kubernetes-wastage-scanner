@@ -52,8 +52,8 @@ chmod +x scan.sh
 # Default (local only, no publish) — safe for production
 ./scan.sh
 
-# Explicitly publish to default endpoint
-./scan.sh --publish=true
+# Explicitly publish to endpoint
+./scan.sh --publish=true --endpoint https://ecoscale.dev/api
 
 # Scan a specific namespace, output JSON
 ./scan.sh --namespace=kube-system --output=json
@@ -61,12 +61,6 @@ chmod +x scan.sh
 # Use a specific kubectl context, show top 20 items
 ./scan.sh --context=prod-cluster --top=20
 
-# Publish with redacted names to custom endpoint
-./scan.sh --context=prod-cluster --redact=true --publish=true --endpoint=https://your-internal-endpoint.example.com
-
-# Publish to a custom endpoint
-./scan.sh --endpoint https://ecoscale.dev/api
-```
 
 ## What it scans
 
