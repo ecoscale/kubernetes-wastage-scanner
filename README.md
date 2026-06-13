@@ -44,7 +44,6 @@ chmod +x scan.sh
 |------|---------|-------------|
 | `--local` | | Print report only, do not publish |
 | `--publish=BOOL` | `false` | Enable/disable publishing |
-| `--endpoint URL` | `https://ecoscale.dev` | Publish endpoint |
 | `--context NAME` | current context | kubectl context to use |
 | `--namespace NS` | all namespaces | Restrict scan to a namespace |
 | `--top N` | `10` | Top items per table |
@@ -64,8 +63,8 @@ chmod +x scan.sh
 # Default (local only, no publish) — safe for production
 ./scan.sh
 
-# Explicitly publish to endpoint
-./scan.sh --publish=true --endpoint https://ecoscale.dev/api
+# Explicitly publish
+./scan.sh --publish=true
 
 # Scan a specific namespace, output JSON
 ./scan.sh --namespace=kube-system --output=json

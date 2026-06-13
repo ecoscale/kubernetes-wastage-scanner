@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -u
 
-DEFAULT_ENDPOINT="https://ecoscale.dev"
+DEFAULT_ENDPOINT="https://app.ecoscale.dev/api"
 DEFAULT_TOP=10
 DEFAULT_REDACT=false
 DEFAULT_PUBLISH=false
@@ -24,7 +24,7 @@ usage() {
   printf '%s\n' "Usage: $0 [flags]"
   printf '%s\n' "  --local              Print report only, do not publish"
   printf '%s\n' "  --publish=BOOL       Enable/disable publishing (default: true)"
-  printf '%s\n' "  --endpoint URL       Publish endpoint (default: https://ecoscale.dev)"
+  printf '%s\n' "  --endpoint URL       Publish endpoint (default: https://app.ecoscale.dev/api)"
   printf '%s\n' "  --context NAME       kubectl context to use"
   printf '%s\n' "  --namespace NS       Restrict scan to namespace"
   printf '%s\n' "  --top N              Top items per table (default: 10)"
