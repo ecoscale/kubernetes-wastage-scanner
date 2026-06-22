@@ -63,8 +63,9 @@ chmod +x scan.sh
 # Default (local only, no publish) — safe for production
 ./scan.sh
 
-# Explicitly publish
+# Explicitly publish 
 ./scan.sh --publish=true
+# your will get report as html on https://app.ecoscale.dev/api/scan/tOqQR96ZBGTt endpoint valid for 24 hours. 
 
 # Scan a specific namespace, output JSON
 ./scan.sh --namespace=kube-system --output=json
