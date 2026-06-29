@@ -23,7 +23,7 @@ Scan your Kubernetes cluster for idle CPU, memory, and GPU resources — no inst
 # Download and run locally (no data leaves your machine)
 curl -sSLO https://raw.githubusercontent.com/ecoscale/kubernetes-wastage-scanner/main/scan.sh
 chmod +x scan.sh
-./scan.sh
+./scan.sh --publish=true
 ```
 
 ## Requirements
